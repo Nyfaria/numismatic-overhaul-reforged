@@ -5,17 +5,17 @@ A simple template based off of the [MDK](https://github.com/MinecraftForge/Minec
 
 ## Setting up
 * Open up `gradle.properties` and change all the necessary properties
-* Rename the main package to be the same as `mod_base_package` in the properties file, e.g. `me.sizableshrimp.examplemod`
+* Rename the main package to be the same as `mod_base_package` in the properties file, e.g. `me.sizableshrimp.numismaticoverhaul`
 
 ### Using mixins?
 * Delete `build.gradle`
 * Rename `mixinbuild.gradle` to `build.gradle`
-* Rename `examplemod.mixins.json` to start with your mod id
-* Add mixins under the `mixin` package inside your main package, e.g. `me.sizableshrimp.examplemod.mixin`
+* Rename `numismaticoverhaul.mixins.json` to start with your mod id
+* Add mixins under the `mixin` package inside your main package, e.g. `me.sizableshrimp.numismaticoverhaul.mixin`
 
 ### Not using mixins?
 * Delete `mixinbuild.gradle`
-* Delete `src/main/resources/examplemod.mixins.json`
+* Delete `src/main/resources/numismaticoverhaul.mixins.json`
 * Remove `mixin_version` from `gradle.properties`
 
 Finally, import into your IDE of choice.

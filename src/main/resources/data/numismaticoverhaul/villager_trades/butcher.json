@@ -1,0 +1,174 @@
+{
+  "profession": "butcher",
+  "trades": {
+    "novice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 420,
+        "buy": {
+          "item": "chicken",
+          "count": 14
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 200,
+        "buy": {
+          "item": "rabbit",
+          "count": 4
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 300,
+        "buy": {
+          "item": "porkchop",
+          "count": 11
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 500,
+        "sell": {
+          "item": "rabbit_stew",
+          "count": 1
+        },
+        "max_uses": 3,
+        "villager_experience": 10
+      }
+    ],
+    "apprentice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 150,
+        "buy": {
+          "item": "coal",
+          "count": 15
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 200,
+        "buy": {
+          "item": "mutton",
+          "count": 10
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 400,
+        "sell": {
+          "item": "cooked_rabbit",
+          "count": 4
+        },
+        "max_uses": 8,
+        "villager_experience": 8
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 400,
+        "sell": {
+          "item": "cooked_chicken",
+          "count": 6
+        },
+        "villager_experience": 8
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 400,
+        "sell": {
+          "item": "cooked_porkchop",
+          "count": 5
+        },
+        "max_uses": 15,
+        "villager_experience": 8
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 400,
+        "buy": {
+          "item": "beef",
+          "count": 10
+        },
+        "max_uses": 16,
+        "villager_experience": 8
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 500,
+        "sell": {
+          "item": "campfire",
+          "count": 1
+        },
+        "max_uses": 8,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 300,
+        "sell": {
+          "item": "cooked_beef",
+          "count": 4
+        },
+        "max_uses": 16,
+        "villager_experience": 8
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 500,
+        "sell": {
+          "item": "cooked_mutton",
+          "count": 6
+        },
+        "villager_experience": 8
+      }
+    ],
+    "expert": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 700,
+        "buy": {
+          "item": "dried_kelp_block",
+          "count": 10
+        },
+        "villager_experience": 8
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 600,
+        "buy": {
+          "item": "sweet_berries",
+          "count": 10
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 400,
+        "sell": {
+          "item": "mutton",
+          "count": 10
+        },
+        "max_uses": 16,
+        "villager_experience": 8
+      }
+    ],
+    "master": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 10000,
+        "sell": {
+          "item": "diamond_axe",
+          "count": 1
+        },
+        "villager_experience": 10
+      }
+    ]
+  }
+}

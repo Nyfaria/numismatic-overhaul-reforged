@@ -1,0 +1,149 @@
+{
+  "profession": "mason",
+  "trades": {
+    "novice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 48,
+        "buy": {
+          "item": "clay_ball",
+          "count": 24
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 60,
+        "buy": {
+          "item": "sand",
+          "count": 25
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 99,
+        "sell": {
+          "item": "brick",
+          "count": 12
+        }
+      }
+    ],
+    "apprentice": [
+      {
+        "type": "numismaticoverhaul:process_item",
+        "price": 200,
+        "buy": {
+          "item": "clay_ball",
+          "count": 16
+        },
+        "sell": {
+          "item": "brick",
+          "count": 12
+        },
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:process_item",
+        "price": 300,
+        "buy": {
+          "item": "cobblestone",
+          "count": 16
+        },
+        "sell": {
+          "item": "chiseled_stone_bricks",
+          "count": 10
+        },
+        "villager_experience": 10
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 300,
+        "sell": {
+          "item": "polished_andesite",
+          "count": 4
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 300,
+        "sell": {
+          "item": "polished_diorite",
+          "count": 4
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 300,
+        "sell": {
+          "item": "polished_granite",
+          "count": 4
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 300,
+        "sell": {
+          "item": "dripstone_block",
+          "count": 4
+        }
+      }
+    ],
+    "expert": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 300,
+        "buy": {
+          "item": "quartz",
+          "count": 12
+        },
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_tag",
+        "price": 250,
+        "sell": {
+          "tag": "numismaticoverhaul:terracotta",
+          "count": 4
+        },
+        "max_uses": 24
+      },
+      {
+        "type": "numismaticoverhaul:sell_tag",
+        "price": 400,
+        "sell": {
+          "tag": "numismaticoverhaul:concrete",
+          "count": 4
+        },
+        "max_uses": 20
+      },
+      {
+        "type": "numismaticoverhaul:sell_tag",
+        "price": 400,
+        "sell": {
+          "tag": "numismaticoverhaul:glazed_terracotta",
+          "count": 4
+        }
+      }
+    ],
+    "master": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 550,
+        "sell": {
+          "item": "quartz_block",
+          "count": 1
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 800,
+        "sell": {
+          "item": "quartz_pillar",
+          "count": 1
+        }
+      }
+    ]
+  }
+}

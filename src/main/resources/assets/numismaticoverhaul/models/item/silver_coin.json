@@ -1,0 +1,32 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "numismaticoverhaul:item/silver_coin"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "coins": 0.09
+      },
+      "model": "numismaticoverhaul:item/silver_coin_0"
+    },
+    {
+      "predicate": {
+        "coins": 0.27
+      },
+      "model": "numismaticoverhaul:item/silver_coin_1"
+    },
+    {
+      "predicate": {
+        "coins": 0.45
+      },
+      "model": "numismaticoverhaul:item/silver_coin_2"
+    },
+    {
+      "predicate": {
+        "coins": 0.63
+      },
+      "model": "numismaticoverhaul:item/silver_coin_3"
+    }
+  ]
+}

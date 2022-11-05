@@ -1,0 +1,221 @@
+{
+  "profession": "shepherd",
+  "trades": {
+    "novice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 220,
+        "buy": {
+          "item": "white_wool",
+          "count": 18
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 230,
+        "buy": {
+          "item": "brown_wool",
+          "count": 18
+        }
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 230,
+        "buy": {
+          "item": "black_wool",
+          "count": 18
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 500,
+        "sell": {
+          "item": "shears",
+          "count": 1
+        },
+        "max_uses": 16
+      }
+    ],
+    "apprentice": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 500,
+        "sell": {
+          "item": "oak_fence",
+          "count": 4
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:sell_tag",
+        "price": 300,
+        "sell": {
+          "tag": "numismaticoverhaul:wool",
+          "count": 1
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_tag",
+        "price": 300,
+        "sell": {
+          "tag": "numismaticoverhaul:carpets",
+          "count": 4
+        }
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "red_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 800,
+        "sell": {
+          "item": "white_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "light_gray_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "pink_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "yellow_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "orange_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "black_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      }
+    ],
+    "expert": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "green_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "brown_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "blue_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "purple_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "cyan_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1600,
+        "sell": {
+          "item": "magenta_dye",
+          "count": 4
+        },
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_tag",
+        "price": 1000,
+        "sell": {
+          "tag": "numismaticoverhaul:beds",
+          "count": 1
+        },
+        "villager_experience": 10
+      }
+    ],
+    "master": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1000,
+        "sell": {
+          "item": "painting",
+          "count": 4
+        }
+      }
+    ]
+  }
+}

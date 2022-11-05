@@ -1,0 +1,146 @@
+{
+  "profession": "fletcher",
+  "trades": {
+    "novice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 40,
+        "buy": {
+          "item": "stick",
+          "count": 40
+        },
+        "max_uses": 10
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 60,
+        "buy": {
+          "item": "flint",
+          "count": 10
+        },
+        "max_uses": 10
+      },
+      {
+        "type": "numismaticoverhaul:process_item",
+        "price": 200,
+        "buy": {
+          "item": "gravel",
+          "count": 8
+        },
+        "sell": {
+          "item": "flint",
+          "count": 4
+        },
+        "max_uses": 10
+      }
+    ],
+    "apprentice": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 100,
+        "sell": {
+          "item": "arrow",
+          "count": 16
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 2000,
+        "sell": {
+          "item": "bow",
+          "count": 1
+        },
+        "max_uses": 8,
+        "villager_experience": 8
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 80,
+        "buy": {
+          "item": "string",
+          "count": 16
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1200,
+        "sell": {
+          "item": "crossbow",
+          "count": 1
+        },
+        "max_uses": 4,
+        "villager_experience": 8
+      }
+    ],
+    "expert": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1500,
+        "sell": {
+          "item": "feather",
+          "count": 15
+        }
+      },
+      {
+        "type": "numismaticoverhaul:enchant_item",
+        "base_price": 300,
+        "allow_treasure": false,
+        "level": 20,
+        "item": {
+          "item": "bow"
+        },
+        "max_uses": 2,
+        "villager_experience": 10
+      }
+    ],
+    "master": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 400,
+        "sell": {
+          "item": "tripwire_hook",
+          "count": 4
+        }
+      },
+      {
+        "type": "numismaticoverhaul:enchant_item",
+        "base_price": 300,
+        "allow_treasure": false,
+        "level": 20,
+        "item": {
+          "item": "crossbow"
+        },
+        "max_uses": 2,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_potion_container",
+        "price": 1600,
+        "buy_item": {
+          "item": "arrow",
+          "count": 8
+        },
+        "container_item": {
+          "item": "tipped_arrow",
+          "count": 8
+        },
+        "max_uses": 8
+      },
+      {
+        "type": "numismaticoverhaul:sell_potion_container",
+        "price": 1600,
+        "buy_item": {
+          "item": "arrow",
+          "count": 8
+        },
+        "container_item": {
+          "item": "tipped_arrow",
+          "count": 8
+        },
+        "max_uses": 8
+      }
+    ]
+  }
+}

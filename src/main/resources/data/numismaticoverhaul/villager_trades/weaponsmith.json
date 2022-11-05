@@ -1,0 +1,100 @@
+{
+  "profession": "weaponsmith",
+  "trades": {
+    "novice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 150,
+        "buy": {
+          "item": "coal",
+          "count": 15
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1280,
+        "sell": {
+          "item": "iron_axe",
+          "count": 1
+        },
+        "max_uses": 8,
+        "villager_experience": 10
+      }
+    ],
+    "apprentice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 200,
+        "buy": {
+          "item": "iron_ingot",
+          "count": 7
+        }
+      },
+      {
+        "type": "numismaticoverhaul:enchant_item",
+        "base_price": 200,
+        "allow_treasure": false,
+        "level": 15,
+        "item": {
+          "item": "iron_sword"
+        },
+        "max_uses": 4,
+        "villager_experience": 10
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 180,
+        "buy": {
+          "item": "flint",
+          "count": 12
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 3000,
+        "sell": {
+          "item": "bell",
+          "count": 1
+        },
+        "villager_experience": 10
+      }
+    ],
+    "expert": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 3000,
+        "buy": {
+          "item": "diamond",
+          "count": 1
+        },
+        "max_uses": 3
+      },
+      {
+        "type": "numismaticoverhaul:enchant_item",
+        "base_price": 1600,
+        "allow_treasure": false,
+        "level": 25,
+        "item": {
+          "item": "diamond_axe"
+        },
+        "max_uses": 3,
+        "villager_experience": 20
+      }
+    ],
+    "master": [
+      {
+        "type": "numismaticoverhaul:enchant_item",
+        "base_price": 1800,
+        "allow_treasure": true,
+        "level": 25,
+        "item": {
+          "item": "diamond_sword"
+        },
+        "max_uses": 3,
+        "villager_experience": 20
+      }
+    ]
+  }
+}

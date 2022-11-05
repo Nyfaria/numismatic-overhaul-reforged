@@ -1,0 +1,213 @@
+{
+  "profession": "farmer",
+  "trades": {
+    "novice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 40,
+        "buy": {
+          "item": "wheat",
+          "count": 15
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 40,
+        "buy": {
+          "item": "potato",
+          "count": 25
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 40,
+        "buy": {
+          "item": "carrot",
+          "count": 25
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 40,
+        "buy": {
+          "item": "beetroot",
+          "count": 15
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 90,
+        "sell": {
+          "item": "bread",
+          "count": 5
+        },
+        "max_uses": 16
+      }
+    ],
+    "apprentice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 100,
+        "buy": {
+          "item": "pumpkin",
+          "count": 10
+        },
+        "max_uses": 10,
+        "villager_experience": 8
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 200,
+        "sell": {
+          "item": "pumpkin_pie",
+          "count": 5
+        },
+        "max_uses": 8,
+        "villager_experience": 8
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 700,
+        "sell": {
+          "item": "apple",
+          "count": 8
+        },
+        "max_uses": 5
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 200,
+        "buy": {
+          "item": "melon",
+          "count": 4
+        },
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 96,
+        "sell": {
+          "item": "cookie",
+          "count": 16
+        }
+      }
+    ],
+    "expert": [
+      {
+        "type": "numismaticoverhaul:sell_sus_stew",
+        "price": 800,
+        "effect_id": "fire_resistance",
+        "duration": 80,
+        "max_uses": 3,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_sus_stew",
+        "price": 800,
+        "effect_id": "blindness",
+        "duration": 160,
+        "max_uses": 3,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_sus_stew",
+        "price": 800,
+        "effect_id": "saturation",
+        "duration": 7,
+        "max_uses": 3,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_sus_stew",
+        "price": 800,
+        "effect_id": "saturation",
+        "duration": 7,
+        "max_uses": 3,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_sus_stew",
+        "price": 800,
+        "effect_id": "jump_boost",
+        "duration": 120,
+        "max_uses": 3,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_sus_stew",
+        "price": 800,
+        "effect_id": "poison",
+        "duration": 240,
+        "max_uses": 3,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_sus_stew",
+        "price": 800,
+        "effect_id": "regeneration",
+        "duration": 160,
+        "max_uses": 3,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_sus_stew",
+        "price": 800,
+        "effect_id": "night_vision",
+        "duration": 100,
+        "max_uses": 3,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_sus_stew",
+        "price": 800,
+        "effect_id": "weakness",
+        "duration": 180,
+        "max_uses": 3,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_sus_stew",
+        "price": 800,
+        "effect_id": "wither",
+        "duration": 160,
+        "max_uses": 3,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 1500,
+        "sell": {
+          "item": "cake",
+          "count": 1
+        },
+        "villager_experience": 10
+      }
+    ],
+    "master": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 600,
+        "sell": {
+          "item": "golden_carrot",
+          "count": 3
+        },
+        "villager_experience": 8
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 800,
+        "sell": {
+          "item": "glistering_melon_slice",
+          "count": 4
+        },
+        "villager_experience": 8
+      }
+    ]
+  }
+}

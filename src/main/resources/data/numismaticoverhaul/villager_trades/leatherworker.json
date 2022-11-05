@@ -1,0 +1,108 @@
+{
+  "profession": "leatherworker",
+  "trades": {
+    "novice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 500,
+        "buy": {
+          "item": "leather",
+          "count": 7
+        },
+        "max_uses": 16
+      },
+      {
+        "type": "numismaticoverhaul:sell_dyed_armor",
+        "price": 1000,
+        "item": "leather_chestplate",
+        "max_uses": 10,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_dyed_armor",
+        "price": 700,
+        "item": "leather_boots",
+        "max_uses": 10,
+        "villager_experience": 10
+      }
+    ],
+    "apprentice": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 240,
+        "buy": {
+          "item": "flint",
+          "count": 16
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_dyed_armor",
+        "price": 180,
+        "item": "leather_helmet",
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_dyed_armor",
+        "price": 450,
+        "item": "leather_leggings",
+        "villager_experience": 10
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "numismaticoverhaul:buy_stack",
+        "price": 500,
+        "buy": {
+          "item": "rabbit_hide",
+          "count": 4
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 800,
+        "sell": {
+          "item": "leather",
+          "count": 4
+        },
+        "max_uses": 8
+      }
+    ],
+    "expert": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 300,
+        "sell": {
+          "item": "scute",
+          "count": 1
+        }
+      },
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 800,
+        "sell": {
+          "item": "leather_horse_armor",
+          "count": 1
+        },
+        "villager_experience": 10
+      }
+    ],
+    "master": [
+      {
+        "type": "numismaticoverhaul:sell_stack",
+        "price": 2200,
+        "sell": {
+          "item": "saddle",
+          "count": 1
+        },
+        "max_uses": 6,
+        "villager_experience": 10
+      },
+      {
+        "type": "numismaticoverhaul:sell_dyed_armor",
+        "price": 1000,
+        "item": "leather_horse_armor",
+        "villager_experience": 10
+      }
+    ]
+  }
+}
