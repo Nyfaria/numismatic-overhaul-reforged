@@ -5,7 +5,6 @@ import com.google.gson.JsonObject;
 import com.nyfaria.numismaticoverhaul.currency.CurrencyHelper;
 import com.nyfaria.numismaticoverhaul.villagers.json.TradeJsonAdapter;
 import com.nyfaria.numismaticoverhaul.villagers.json.VillagerJsonHelper;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.DyeColor;
@@ -17,6 +16,7 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Random;
 
 public class SellDyedArmorAdapter extends TradeJsonAdapter {
 
@@ -48,7 +48,7 @@ public class SellDyedArmorAdapter extends TradeJsonAdapter {
             this.priceMultiplier = priceMultiplier;
         }
 
-        public MerchantOffer getOffer(Entity entity, RandomSource random) {
+        public MerchantOffer getOffer(Entity entity, Random random) {
             ItemStack itemStack2 = new ItemStack(this.sell);
             if (this.sell instanceof DyeableLeatherItem) {
                 List<DyeItem> list = Lists.newArrayList();
@@ -68,7 +68,7 @@ public class SellDyedArmorAdapter extends TradeJsonAdapter {
 
         }
 
-        private static DyeItem getDye(RandomSource random) {
+        private static DyeItem getDye(Random random) {
             return DyeItem.byColor(DyeColor.byId(random.nextInt(16)));
         }
     }

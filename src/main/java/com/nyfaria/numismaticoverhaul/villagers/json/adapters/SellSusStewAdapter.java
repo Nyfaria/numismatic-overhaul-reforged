@@ -7,7 +7,7 @@ import com.nyfaria.numismaticoverhaul.villagers.json.TradeJsonAdapter;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.util.RandomSource;
+import java.util.Random;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -54,7 +54,7 @@ public class SellSusStewAdapter extends TradeJsonAdapter {
 
         @Nullable
         @Override
-        public MerchantOffer getOffer(Entity entity, RandomSource random) {
+        public MerchantOffer getOffer(Entity entity, Random random) {
             ItemStack susStew = new ItemStack(Items.SUSPICIOUS_STEW, 1);
             SuspiciousStewItem.saveMobEffect(susStew, this.effect, this.duration);
 

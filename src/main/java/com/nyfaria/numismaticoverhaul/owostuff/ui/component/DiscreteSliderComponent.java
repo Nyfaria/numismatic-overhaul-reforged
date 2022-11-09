@@ -4,6 +4,7 @@ import com.nyfaria.numismaticoverhaul.owostuff.ui.core.Sizing;
 import com.nyfaria.numismaticoverhaul.owostuff.ui.parsing.UIModel;
 import com.nyfaria.numismaticoverhaul.owostuff.ui.parsing.UIParsing;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import org.w3c.dom.Element;
 
 import java.math.BigDecimal;
@@ -24,7 +25,7 @@ public class DiscreteSliderComponent extends SliderComponent {
         this.max = max;
 
         this.updateMessage();
-        this.message(Component::literal);
+        this.message(TextComponent::new);
     }
 
     @Override

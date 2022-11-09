@@ -6,6 +6,7 @@ import com.nyfaria.numismaticoverhaul.network.NetworkHandler;
 import com.nyfaria.numismaticoverhaul.network.UpdateShopScreenS2CPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -86,7 +87,7 @@ public class ShopBlock extends BaseEntityBlock {
 
         ((ShopMerchant) shop.getMerchant()).updateTrades();
         shop.getMerchant().setTradingPlayer(player);
-        shop.getMerchant().openTradingScreen(player, Component.translatable("gui.numismaticoverhaul.shop.merchant_title"), 0);
+        shop.getMerchant().openTradingScreen(player, new TranslatableComponent("gui.numismaticoverhaul.shop.merchant_title"), 0);
 
         return InteractionResult.SUCCESS;
     }

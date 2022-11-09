@@ -7,6 +7,7 @@ import com.nyfaria.numismaticoverhaul.owostuff.ui.util.UIErrorToast;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.glfw.GLFW;
@@ -48,7 +49,7 @@ public abstract class BaseOwoScreen<R extends ParentComponent> extends Screen {
     }
 
     protected BaseOwoScreen() {
-        this(Component.empty());
+        this(new TextComponent(""));
     }
 
     /**

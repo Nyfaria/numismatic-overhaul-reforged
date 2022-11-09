@@ -20,6 +20,9 @@ import com.nyfaria.numismaticoverhaul.owostuff.ui.util.UISounds;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.core.Registry;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;
@@ -46,7 +49,7 @@ public class ShopScreen extends BaseUIModelHandledScreen<FlowLayout, ShopScreenH
     private Consumer<String> priceDisplay = s -> {};
     private int tab = 0;
 
-    public ShopScreen(ShopScreenHandler handler, Inventory inventory, net.minecraft.network.chat.Component title) {
+    public ShopScreen(ShopScreenHandler handler, Inventory inventory, Component title) {
 //        super(handler, inventory, title, FlowLayout.class, BaseUIModelScreen.DataSource.file("../src/main/resources/assets/numismaticoverhaul/owo_ui/shop.xml"));
         super(handler, inventory, title, FlowLayout.class, BaseUIModelScreen.DataSource.asset(new ResourceLocation(NumismaticOverhaul.MODID,"shop")));
         this.inventoryLabelY += 1;
@@ -77,9 +80,9 @@ public class ShopScreen extends BaseUIModelHandledScreen<FlowLayout, ShopScreenH
         if (this.uiAdapter == null) return;
 
         long[] storedCurrency = CurrencyResolver.splitValues(data.storedCurrency());
-        this.component(LabelComponent.class, "bronze-count").text(net.minecraft.network.chat.Component.literal(String.valueOf(storedCurrency[0])));
-        this.component(LabelComponent.class, "silver-count").text(net.minecraft.network.chat.Component.literal(String.valueOf(storedCurrency[1])));
-        this.component(LabelComponent.class, "gold-count").text(net.minecraft.network.chat.Component.literal(String.valueOf(storedCurrency[2])));
+        this.component(LabelComponent.class, "bronze-count").text(new TextComponent(String.valueOf(storedCurrency[0])));
+        this.component(LabelComponent.class, "silver-count").text(new TextComponent(String.valueOf(storedCurrency[1])));
+        this.component(LabelComponent.class, "gold-count").text(new TextComponent(String.valueOf(storedCurrency[2])));
 
         int prevOffers = this.offers.size();
         this.offers.clear();
@@ -95,8 +98,8 @@ public class ShopScreen extends BaseUIModelHandledScreen<FlowLayout, ShopScreenH
 
         this.component(FlowLayout.class, "transfer-button").tooltip(
                 data.transferEnabled()
-                        ? net.minecraft.network.chat.Component.translatable("gui.numismaticoverhaul.shop.transfer_tooltip.enabled")
-                        : net.minecraft.network.chat.Component.translatable("gui.numismaticoverhaul.shop.transfer_tooltip.disabled")
+                        ? new TranslatableComponent("gui.numismaticoverhaul.shop.transfer_tooltip.enabled")
+                        : new TranslatableComponent("gui.numismaticoverhaul.shop.transfer_tooltip.disabled")
         );
         this.component(LabelComponent.class, "transfer-label").text(
                 data.transferEnabled()
@@ -136,9 +139,9 @@ public class ShopScreen extends BaseUIModelHandledScreen<FlowLayout, ShopScreenH
                 this.afterDataUpdate();
 
                 var price = CurrencyResolver.splitValues(s.isBlank() ? 0 : Integer.parseInt(s));
-                this.component(LabelComponent.class, "offer-bronze-count").text(net.minecraft.network.chat.Component.literal(String.valueOf(price[0])));
-                this.component(LabelComponent.class, "offer-silver-count").text(net.minecraft.network.chat.Component.literal(String.valueOf(price[1])));
-                this.component(LabelComponent.class, "offer-gold-count").text(net.minecraft.network.chat.Component.literal(String.valueOf(price[2])));
+                this.component(LabelComponent.class, "offer-bronze-count").text(new TextComponent(String.valueOf(price[0])));
+                this.component(LabelComponent.class, "offer-silver-count").text(new TextComponent(String.valueOf(price[1])));
+                this.component(LabelComponent.class, "offer-gold-count").text(new TextComponent(String.valueOf(price[2])));
             });
 
             submitButton.onPress((ButtonComponent button) -> this.menu.createOffer(Integer.parseInt(priceField.getValue())));

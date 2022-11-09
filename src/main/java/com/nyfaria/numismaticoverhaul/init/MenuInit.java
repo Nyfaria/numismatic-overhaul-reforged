@@ -9,7 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class MenuInit {
-    public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.MENU_TYPES, NumismaticOverhaul.MODID);
+    public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.CONTAINERS, NumismaticOverhaul.MODID);
 
     public static final RegistryObject<MenuType<ShopScreenHandler>> SHOP = MENU_TYPES.register("shop", () -> new MenuType<>(ShopScreenHandler::new));
     public static final RegistryObject<MenuType<PiggyBankScreenHandler>> PIGGY_BANK = MENU_TYPES.register("piggy_bank", () -> new MenuType<>(PiggyBankScreenHandler::new));

@@ -11,6 +11,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Player;
 
 public class PurseButton extends ImageButton {
@@ -23,7 +24,7 @@ public class PurseButton extends ImageButton {
         super(x, y, 11, 13, 62, 0, 13, PurseWidget.TEXTURE, pressAction);
         this.currencyStorage = CurrencyHolderAttacher.getExampleHolderUnwrap(player);
         this.parent = parent;
-        this.TOOLTIP_TITLE = Component.translatable("gui.numismaticoverhaul.purse_title").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(Currency.GOLD.getNameColor())));
+        this.TOOLTIP_TITLE = new TranslatableComponent("gui.numismaticoverhaul.purse_title").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(Currency.GOLD.getNameColor())));
     }
 
     @Override

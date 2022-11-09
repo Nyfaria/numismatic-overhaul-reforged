@@ -50,9 +50,9 @@ public class BlockComponent extends BaseComponent {
             }
 
             if (this.entity != null) {
-                var медведь = this.client.getBlockEntityRenderDispatcher().getRenderer(this.entity);
-                if (медведь != null) {
-                    медведь.render(entity, partialTicks, matrices, vertexConsumers, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
+                var bop = this.client.getBlockEntityRenderDispatcher().getRenderer(this.entity);
+                if (bop != null) {
+                    bop.render(entity, partialTicks, matrices, vertexConsumers, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
                 }
             }
 

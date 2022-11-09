@@ -1,3 +1,4 @@
+/*
 package com.nyfaria.numismaticoverhaul.mixin.owomixins.ui;
 
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -87,3 +88,4 @@ public class HandledScreenMixin {
         this.owo$lastClickedSlot = null;
     }
 }
+*/

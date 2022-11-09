@@ -9,10 +9,10 @@ import com.nyfaria.numismaticoverhaul.villagers.json.VillagerJsonHelper;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
@@ -26,6 +26,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Locale;
+import java.util.Random;
+import java.util.Set;
 
 public class SellMapAdapter extends TradeJsonAdapter {
 
@@ -58,10 +60,10 @@ public class SellMapAdapter extends TradeJsonAdapter {
         }
 
         @Nullable
-        public MerchantOffer getOffer(Entity entity, RandomSource random) {
+        public MerchantOffer getOffer(Entity entity, Random random) {
             if (!(entity.level instanceof ServerLevel serverWorld)) return null;
 
-            final var registry = serverWorld.registryAccess().registryOrThrow(Registry.STRUCTURE_REGISTRY);
+            final var registry = serverWorld.registryAccess().registryOrThrow(Registry.CONFIGURED_STRUCTURE_FEATURE_REGISTRY);
             final var feature = RegistryAccess.getEntry(registry, this.structureId);
 
             if (feature == null || feature.unwrapKey().isEmpty()) {
@@ -69,7 +71,7 @@ public class SellMapAdapter extends TradeJsonAdapter {
                 return null;
             }
 
-            final var result = serverWorld.getChunkSource().getGenerator().findNearestMapStructure(serverWorld, HolderSet.direct(feature),
+            final var result = serverWorld.getChunkSource().getGenerator().findNearestMapFeature(serverWorld, HolderSet.direct(feature),
                     entity.blockPosition(), 1500, true);
 
             if (result == null) return null;
@@ -86,7 +88,7 @@ public class SellMapAdapter extends TradeJsonAdapter {
             ItemStack itemStack = MapItem.create(serverWorld, blockPos.getX(), blockPos.getZ(), (byte) 2, true, true);
             MapItem.renderBiomePreviewMap(serverWorld, itemStack);
             MapItemSavedData.addTargetDecoration(itemStack, blockPos, "+", iconType);
-            itemStack.setHoverName(Component.translatable("filled_map." + feature.unwrapKey().get().location().getPath().toLowerCase(Locale.ROOT)));
+            itemStack.setHoverName(new TranslatableComponent("filled_map." + feature.unwrapKey().get().location().getPath().toLowerCase(Locale.ROOT)));
             return new MerchantOffer(CurrencyHelper.getClosest(price), new ItemStack(Items.MAP), itemStack, this.maxUses, this.experience, multiplier);
         }
     }

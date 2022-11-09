@@ -6,7 +6,6 @@ import com.nyfaria.numismaticoverhaul.villagers.json.TradeJsonAdapter;
 import com.nyfaria.numismaticoverhaul.villagers.json.VillagerJsonHelper;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
@@ -17,6 +16,7 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
+import java.util.Random;
 
 public class EnchantItemAdapter extends TradeJsonAdapter {
 
@@ -55,7 +55,7 @@ public class EnchantItemAdapter extends TradeJsonAdapter {
             this.basePrice = basePrice;
         }
 
-        public MerchantOffer getOffer(Entity entity, RandomSource random) {
+        public MerchantOffer getOffer(Entity entity, Random random) {
             ItemStack itemStack = toEnchant.copy();
             itemStack = EnchantmentHelper.enchantItem(random, itemStack, level, allowTreasure);
 

@@ -4,12 +4,13 @@ import com.google.gson.JsonObject;
 import com.nyfaria.numismaticoverhaul.currency.CurrencyHelper;
 import com.nyfaria.numismaticoverhaul.villagers.json.TradeJsonAdapter;
 import com.nyfaria.numismaticoverhaul.villagers.json.VillagerJsonHelper;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.trading.MerchantOffer;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Random;
 
 public class DimensionAwareSellStackAdapter extends TradeJsonAdapter {
 
@@ -47,7 +48,7 @@ public class DimensionAwareSellStackAdapter extends TradeJsonAdapter {
             this.targetDimensionId = targetDimensionId;
         }
 
-        public MerchantOffer getOffer(Entity entity, RandomSource random) {
+        public MerchantOffer getOffer(Entity entity, Random random) {
             if (!entity.level.dimension().location().toString().equals(targetDimensionId)) return null;
 
             return new MerchantOffer(CurrencyHelper.getClosest(price), sell, this.maxUses, this.experience, multiplier);

@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -77,7 +78,7 @@ public class Components {
 
     public static EditBox textBox(Sizing horizontalSizing) {
         return createWithSizing(
-                () -> new ModEditBox(Minecraft.getInstance().font, 0, 0, 0, 0, Component.empty()),
+                () -> new ModEditBox(Minecraft.getInstance().font, 0, 0, 0, 0, new TextComponent("")),
                 horizontalSizing,
                 Sizing.fixed(20)
         );

@@ -13,6 +13,7 @@ import com.nyfaria.numismaticoverhaul.owostuff.ui.parsing.UIParsing;
 import com.nyfaria.numismaticoverhaul.owostuff.ui.util.Drawer;
 import com.nyfaria.numismaticoverhaul.owostuff.ui.util.UISounds;
 import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.TextComponent;
 import org.lwjgl.glfw.GLFW;
 import org.w3c.dom.Element;
 
@@ -138,7 +139,7 @@ public class CollapsibleContainer extends VerticalFlowLayout {
 
     public static CollapsibleContainer parse(Element element) {
         var textElement = UIParsing.childElements(element).get("text");
-        var title = textElement == null ? net.minecraft.network.chat.Component.empty() : UIParsing.parseText(textElement);
+        var title = textElement == null ? new TextComponent("") : UIParsing.parseText(textElement);
 
         return element.getAttribute("expanded").equals("true")
                 ? Containers.collapsible(Sizing.content(), Sizing.content(), title, true)
@@ -151,7 +152,7 @@ public class CollapsibleContainer extends VerticalFlowLayout {
         protected float targetRotation = 90;
 
         public SpinnyBoiComponent() {
-            super(net.minecraft.network.chat.Component.literal(">"));
+            super(new TextComponent(">"));
             this.margins(Insets.horizontal(4));
         }
 

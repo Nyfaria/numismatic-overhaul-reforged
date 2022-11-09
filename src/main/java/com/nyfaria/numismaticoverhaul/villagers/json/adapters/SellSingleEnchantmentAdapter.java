@@ -5,7 +5,7 @@ import com.nyfaria.numismaticoverhaul.currency.CurrencyHelper;
 import com.nyfaria.numismaticoverhaul.villagers.json.TradeJsonAdapter;
 import net.minecraft.core.Registry;
 import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
+import java.util.Random;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.EnchantedBookItem;
@@ -17,6 +17,7 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class SellSingleEnchantmentAdapter extends TradeJsonAdapter {
@@ -39,7 +40,7 @@ public class SellSingleEnchantmentAdapter extends TradeJsonAdapter {
             this.multiplier = multiplier;
         }
 
-        public MerchantOffer getOffer(Entity entity, RandomSource random) {
+        public MerchantOffer getOffer(Entity entity, Random random) {
             List<Enchantment> list = Registry.ENCHANTMENT.stream().filter(Enchantment::isTradeable).collect(Collectors.toList());
             Enchantment enchantment = list.get(random.nextInt(list.size()));
 

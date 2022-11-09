@@ -22,7 +22,7 @@ public enum CursorStyle {
      * The cross-shaped cursor which signals
      * draggable/movable areas
      */
-    MOVE(GLFW.GLFW_RESIZE_ALL_CURSOR);
+    MOVE(GLFW.GLFW_CROSSHAIR_CURSOR);
 
     public final int glfw;
 

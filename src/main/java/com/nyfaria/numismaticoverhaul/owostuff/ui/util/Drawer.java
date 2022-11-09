@@ -15,6 +15,8 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 
@@ -228,7 +230,7 @@ public class Drawer extends GuiComponent {
                     }
 
                     final var nameText = net.minecraft.network.chat.Component.nullToEmpty(child.getClass().getSimpleName() + (child.id() != null ? " '" + child.id() + "'" : ""));
-                    final var descriptor = net.minecraft.network.chat.Component.literal(child.x() + "," + child.y() + " (" + child.width() + "," + child.height() + ")"
+                    final var descriptor =new TranslatableComponent(child.x() + "," + child.y() + " (" + child.width() + "," + child.height() + ")"
                             + " <" + margins.top() + "," + margins.bottom() + "," + margins.left() + "," + margins.right() + "> ");
                     if (child instanceof ParentComponent parentComponent) {
                         var padding = parentComponent.padding().get();
@@ -255,7 +257,7 @@ public class Drawer extends GuiComponent {
         private static UtilityScreen INSTANCE;
 
         private UtilityScreen() {
-            super(net.minecraft.network.chat.Component.empty());
+            super(new TextComponent(""));
         }
 
         @Override

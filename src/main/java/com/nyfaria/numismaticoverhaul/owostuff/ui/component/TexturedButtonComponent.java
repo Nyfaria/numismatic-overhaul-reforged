@@ -31,6 +31,7 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Unique;
@@ -124,7 +125,7 @@ public class TexturedButtonComponent extends Button implements ModComponent {
             textureHeight = UIParsing.parseSignedInt(element.getAttributeNode("texture-height"));
         }
 
-        return Components.texturedButton(textureId, Component.empty(), width, height, u, v, textureWidth, textureHeight, button -> {});
+        return Components.texturedButton(textureId, new TextComponent(""), width, height, u, v, textureWidth, textureHeight, button -> {});
     }
 
     @Unique

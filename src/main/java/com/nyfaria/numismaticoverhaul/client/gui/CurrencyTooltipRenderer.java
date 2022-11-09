@@ -6,6 +6,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class CurrencyTooltipRenderer {
         }
 
         if (tooltip.size() == 1) {
-            tooltip.add(Component.translatable("numismaticoverhaul.empty").withStyle(ChatFormatting.GRAY));
+            tooltip.add(new TranslatableComponent("numismaticoverhaul.empty").withStyle(ChatFormatting.GRAY));
         }
 
         screen.renderComponentTooltip(matrices, tooltip, x, y - 15);

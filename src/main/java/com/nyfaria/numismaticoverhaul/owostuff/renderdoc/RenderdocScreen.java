@@ -18,6 +18,7 @@ import com.nyfaria.numismaticoverhaul.owostuff.ui.core.VerticalAlignment;
 import com.nyfaria.numismaticoverhaul.owostuff.ui.util.CommandOpenedScreen;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -44,7 +45,7 @@ public class RenderdocScreen extends BaseOwoScreen<FlowLayout> implements Comman
         var overlayState = RenderDoc.getOverlayOptions();
         rootComponent.child(
                         Containers.verticalFlow(Sizing.content(), Sizing.content())
-                                .child(Components.label(Component.literal("RenderDoc Controls")).shadow(true).margins(Insets.top(5).withBottom(10)))
+                                .child(Components.label(new TextComponent("RenderDoc Controls")).shadow(true).margins(Insets.top(5).withBottom(10)))
                                 .child(
                                         Containers.grid(Sizing.content(), Sizing.content(), 2, 2)
                                                 .child(overlayControl(Component.nullToEmpty("Enabled"), overlayState, RenderDoc.OverlayOption.ENABLED), 0, 0)

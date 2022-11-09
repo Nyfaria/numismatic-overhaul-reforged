@@ -28,6 +28,8 @@ import net.minecraft.client.gui.components.AbstractSliderButton;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Unique;
@@ -44,9 +46,9 @@ public class SliderComponent extends AbstractSliderButton implements ModComponen
     protected Function<String, Component> messageProvider;
 
     protected SliderComponent(Sizing horizontalSizing) {
-        super(0, 0, 0, 0, Component.empty(), 0);
+        super(0, 0, 0, 0, new TextComponent(""), 0);
 
-        this.messageProvider = value -> Component.empty();
+        this.messageProvider = value -> new TextComponent("");
         this.listeners = Observable.of(this.value);
 
         this.sizing(horizontalSizing, Sizing.fixed(20));
@@ -114,9 +116,9 @@ public class SliderComponent extends AbstractSliderButton implements ModComponen
             var content = node.getTextContent().strip();
 
             if (node.getAttribute("translate").equalsIgnoreCase("true")) {
-                this.message(value -> Component.translatable(content, value));
+                this.message(value -> new TranslatableComponent(content, value));
             } else {
-                var text = Component.literal(content);
+                var text = new TextComponent(content);
                 this.message(value -> text);
             }
         }

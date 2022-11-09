@@ -5,8 +5,8 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.contents.LiteralContents;
-import net.minecraft.network.chat.contents.TranslatableContents;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.FormattedCharSequence;
 
 ;
@@ -26,7 +26,7 @@ public class TextOps {
      * @return The combined text
      */
     public static MutableComponent concat(Component prefix, Component text) {
-        return Component.empty().append(prefix).append(text);
+        return new TextComponent("").append(prefix).append(text);
     }
 
     /**
@@ -35,10 +35,10 @@ public class TextOps {
      *
      * @param text  The text to create
      * @param color The color to use in {@code RRGGBB} format
-     * @return The colored text, specifically a {@link LiteralContents}
+     * @return The colored text, specifically a {@link }
      */
     public static MutableComponent withColor(String text, int color) {
-        return Component.literal(text).setStyle(Style.EMPTY.withColor(color));
+        return new TextComponent(text).setStyle(Style.EMPTY.withColor(color));
     }
 
     /**
@@ -47,10 +47,10 @@ public class TextOps {
      *
      * @param text  The text to create
      * @param color The color to use in {@code RRGGBB} format
-     * @return The colored text, specifically a {@link TranslatableContents}
+     * @return The colored text, specifically a {@link }
      */
     public static MutableComponent translateWithColor(String text, int color) {
-        return Component.translatable(text).setStyle(Style.EMPTY.withColor(color));
+        return new TranslatableComponent(text).setStyle(Style.EMPTY.withColor(color));
     }
 
     /**
@@ -67,10 +67,10 @@ public class TextOps {
         var textPieces = text.split("§");
         if (formatting.length != textPieces.length) return withColor("unmatched format specifiers - this is a bug", 0xff007f);
 
-        var textBase = Component.literal(textPieces[0]).withStyle(formatting[0]);
+        var textBase = new TextComponent(textPieces[0]).withStyle(formatting[0]);
 
         for (int i = 1; i < textPieces.length; i++) {
-            textBase.append(Component.literal(textPieces[i]).withStyle(formatting[i]));
+            textBase.append(new TextComponent(textPieces[i]).withStyle(formatting[i]));
         }
 
         return textBase;

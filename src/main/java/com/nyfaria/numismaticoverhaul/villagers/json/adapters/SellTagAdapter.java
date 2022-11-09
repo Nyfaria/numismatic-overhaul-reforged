@@ -12,7 +12,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.util.RandomSource;
+import java.util.Random;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
@@ -53,7 +53,7 @@ public class SellTagAdapter extends TradeJsonAdapter {
             this.multiplier = multiplier;
         }
 
-        public MerchantOffer getOffer(Entity entity, RandomSource random) {
+        public MerchantOffer getOffer(Entity entity, Random random) {
             final var entries = Registry.ITEM.getTag(TagKey.create(Registry.ITEM_REGISTRY, sellTag))
                     .orElse(null);
 

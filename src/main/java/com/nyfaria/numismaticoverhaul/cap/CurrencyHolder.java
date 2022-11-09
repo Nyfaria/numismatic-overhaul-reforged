@@ -8,6 +8,8 @@ import dev._100media.capabilitysyncer.network.EntityCapabilityStatusPacket;
 import dev._100media.capabilitysyncer.network.SimpleEntityCapabilityStatusPacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.network.simple.SimpleChannel;
@@ -66,14 +68,14 @@ public class CurrencyHolder extends PlayerCapability {
         List<ItemStack> transactionStacks = CurrencyConverter.getAsItemStackList(tempValue);
         if (transactionStacks.isEmpty()) return;
 
-        MutableComponent message = value < 0 ? net.minecraft.network.chat.Component.literal("§c- ") : net.minecraft.network.chat.Component.literal("§a+ ");
-        message.append(net.minecraft.network.chat.Component.literal("§7["));
+        MutableComponent message = value < 0 ? new TextComponent("§c- ") : new TextComponent("§a+ ");
+        message.append(new TextComponent("§7["));
         for (ItemStack stack : transactionStacks) {
-            message.append(net.minecraft.network.chat.Component.literal("§b" + stack.getCount() + " "));
-            message.append(net.minecraft.network.chat.Component.translatable("currency.numismaticoverhaul." + ((CoinItem) stack.getItem()).currency.name().toLowerCase()));
-            if (transactionStacks.indexOf(stack) != transactionStacks.size() - 1) message.append(net.minecraft.network.chat.Component.literal(", "));
+            message.append(new TextComponent("§b" + stack.getCount() + " "));
+            message.append(new TranslatableComponent("currency.numismaticoverhaul." + ((CoinItem) stack.getItem()).currency.name().toLowerCase()));
+            if (transactionStacks.indexOf(stack) != transactionStacks.size() - 1) message.append(new TextComponent(", "));
         }
-        message.append(net.minecraft.network.chat.Component.literal("§7]"));
+        message.append(new TextComponent("§7]"));
 
         player.displayClientMessage(message, true);
     }

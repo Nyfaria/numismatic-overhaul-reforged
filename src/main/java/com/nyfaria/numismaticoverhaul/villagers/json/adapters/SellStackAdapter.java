@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import com.nyfaria.numismaticoverhaul.currency.CurrencyHelper;
 import com.nyfaria.numismaticoverhaul.villagers.json.TradeJsonAdapter;
 import com.nyfaria.numismaticoverhaul.villagers.json.VillagerJsonHelper;
-import net.minecraft.util.RandomSource;
+import java.util.Random;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
@@ -42,7 +42,7 @@ public class SellStackAdapter extends TradeJsonAdapter {
             this.multiplier = multiplier;
         }
 
-        public MerchantOffer getOffer(Entity entity, RandomSource random) {
+        public MerchantOffer getOffer(Entity entity, Random random) {
             return new MerchantOffer(CurrencyHelper.getClosest(price), sell, this.maxUses, this.experience, multiplier);
         }
     }

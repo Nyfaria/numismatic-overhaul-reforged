@@ -14,6 +14,7 @@ import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
@@ -79,7 +80,7 @@ public class CurrencyTooltipComponent implements ClientTooltipComponent {
 
     private static Component createPlaceholder(int count) {
         String placeholder = "§7   " + count + " ";
-        return Component.literal(placeholder).withStyle(ChatFormatting.GRAY);
+        return new TextComponent(placeholder).withStyle(ChatFormatting.GRAY);
     }
 
 }

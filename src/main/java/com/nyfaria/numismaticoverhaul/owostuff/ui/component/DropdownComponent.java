@@ -19,6 +19,8 @@ import com.nyfaria.numismaticoverhaul.owostuff.ui.util.Drawer;
 import com.nyfaria.numismaticoverhaul.owostuff.ui.util.UISounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -141,8 +143,8 @@ public class DropdownComponent extends HorizontalFlowLayout {
                 }
                 case "nested" -> {
                     var text = entry.getAttribute("translate").equals("true")
-                            ? Component.translatable(entry.getAttribute("name"))
-                            : Component.literal(entry.getAttribute("name"));
+                            ? new TranslatableComponent(entry.getAttribute("name"))
+                            : new TextComponent(entry.getAttribute("name"));
                     this.nested(text, Sizing.content(), dropdownComponent -> dropdownComponent.parseAndApplyEntries(entry));
                 }
             }

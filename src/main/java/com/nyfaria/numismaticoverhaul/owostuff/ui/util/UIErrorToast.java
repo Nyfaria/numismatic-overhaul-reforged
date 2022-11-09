@@ -8,6 +8,7 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.components.toasts.Toast;
 import net.minecraft.client.gui.components.toasts.ToastComponent;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.util.FormattedCharSequence;
 import org.jetbrains.annotations.ApiStatus;
 
@@ -30,10 +31,10 @@ public class UIErrorToast implements Toast {
             var stackTop = error.getStackTrace()[0];
             var errorLocation = stackTop.getClassName().split("\\.");
 
-            consumer.accept(Component.literal("Type: ").withStyle(ChatFormatting.RED)
-                    .append(Component.literal(error.getClass().getSimpleName()).withStyle(ChatFormatting.GRAY)));
-            consumer.accept(Component.literal("Thrown by: ").withStyle(ChatFormatting.RED)
-                    .append(Component.literal(errorLocation[errorLocation.length - 1] + ":" + stackTop.getLineNumber()).withStyle(ChatFormatting.GRAY)));
+            consumer.accept(new TextComponent("Type: ").withStyle(ChatFormatting.RED)
+                    .append(new TextComponent(error.getClass().getSimpleName()).withStyle(ChatFormatting.GRAY)));
+            consumer.accept(new TextComponent("Thrown by: ").withStyle(ChatFormatting.RED)
+                    .append(new TextComponent(errorLocation[errorLocation.length - 1] + ":" + stackTop.getLineNumber()).withStyle(ChatFormatting.GRAY)));
         });
 
         this.width = Math.min(240, TextOps.width(textRenderer, texts) + 8);
@@ -43,7 +44,7 @@ public class UIErrorToast implements Toast {
     public UIErrorToast(String message) {
         this.textRenderer = Minecraft.getInstance().font;
         var texts = this.initText(message, (consumer) -> {
-            consumer.accept(Component.literal("No context provided").withStyle(ChatFormatting.GRAY));
+            consumer.accept(new TextComponent("No context provided").withStyle(ChatFormatting.GRAY));
         });
         this.width = Math.min(240, TextOps.width(textRenderer, texts) + 8);
         this.errorMessage = this.wrap(texts);
@@ -85,16 +86,16 @@ public class UIErrorToast implements Toast {
 
     private List<Component> initText(String errorMessage, Consumer<Consumer<Component>> contextAppender) {
         final var texts = new ArrayList<Component>();
-        texts.add(Component.literal("owo-ui error").withStyle(ChatFormatting.RED));
+        texts.add(new TextComponent("owo-ui error").withStyle(ChatFormatting.RED));
 
-        texts.add(Component.literal(" "));
+        texts.add(new TextComponent(" "));
         contextAppender.accept(texts::add);
-        texts.add(Component.literal(" "));
+        texts.add(new TextComponent(" "));
 
-        texts.add(Component.literal(errorMessage));
+        texts.add(new TextComponent(errorMessage));
 
-        texts.add(Component.literal(" "));
-        texts.add(Component.literal("Check your log for details").withStyle(ChatFormatting.GRAY));
+        texts.add(new TextComponent(" "));
+        texts.add(new TextComponent("Check your log for details").withStyle(ChatFormatting.GRAY));
 
         return texts;
     }

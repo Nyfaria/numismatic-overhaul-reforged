@@ -20,12 +20,6 @@ public abstract class LivingEntityMixin extends Entity {
         super(type, world);
     }
 
-    @Inject(method = "dropFromLootTable", at = @At("TAIL"))
-    public void injectCoins(DamageSource source, boolean causedByPlayer, CallbackInfo ci) {
-        if (!this.getType().is(TagInit.THE_BOURGEOISIE)) return;
-        if (random.nextFloat() > .5f)
-            spawnAtLocation(new ItemStack(ItemInit.BRONZE_COIN.get(), random.nextIntBetweenInclusive(9, 35)));
-        if (random.nextFloat() > .2f) spawnAtLocation(new ItemStack(ItemInit.SILVER_COIN.get()));
-    }
+
 
 }

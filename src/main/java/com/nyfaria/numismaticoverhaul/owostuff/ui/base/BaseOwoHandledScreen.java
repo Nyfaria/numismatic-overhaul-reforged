@@ -14,6 +14,7 @@ import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.Slot;
@@ -161,11 +162,11 @@ public abstract class BaseOwoHandledScreen<R extends ParentComponent, S extends 
                     var slot = this.menu.slots.get(i);
                     if (!slot.isActive()) continue;
 
-                    Drawer.drawText(matrices, Component.literal(String.valueOf(i)),
+                    Drawer.drawText(matrices, new TextComponent(String.valueOf(i)),
                             this.leftPos + slot.x + 15, this.topPos + slot.y + 9, .5f, 0x0096FF,
                             Drawer.TextAnchor.BOTTOM_RIGHT
                     );
-                    Drawer.drawText(matrices, Component.literal("(" + slot.getContainerSlot() + ")"),
+                    Drawer.drawText(matrices, new TextComponent("(" + slot.getContainerSlot() + ")"),
                             this.leftPos + slot.x + 15, this.topPos + slot.y + 15, .5f, 0x5800FF,
                             Drawer.TextAnchor.BOTTOM_RIGHT
                     );

@@ -15,6 +15,8 @@ import com.nyfaria.numismaticoverhaul.owostuff.ui.container.ScrollContainer;
 import com.nyfaria.numismaticoverhaul.owostuff.ui.core.ModComponent;
 import com.nyfaria.numismaticoverhaul.owostuff.ui.core.Sizing;
 import net.minecraft.ResourceLocationException;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import org.w3c.dom.Element;
@@ -205,8 +207,8 @@ public class UIParsing {
      */
     public static net.minecraft.network.chat.Component parseText(Element element) {
         return element.getAttribute("translate").equalsIgnoreCase("true")
-                ? net.minecraft.network.chat.Component.translatable(element.getTextContent())
-                : net.minecraft.network.chat.Component.literal(element.getTextContent());
+                ? new TranslatableComponent(element.getTextContent())
+                : new TextComponent(element.getTextContent());
     }
 
     public static <E extends Enum<E>> Function<Element, E> parseEnum(Class<E> enumClass) {
@@ -310,11 +312,11 @@ public class UIParsing {
         registerFactory("item", element -> Components.item(ItemStack.EMPTY));
 
         // Widgets
-        registerFactory("label", element -> Components.label(net.minecraft.network.chat.Component.empty()));
+        registerFactory("label", element -> Components.label(new TextComponent("")));
         registerFactory("box", element -> Components.box(Sizing.content(), Sizing.content()));
-        registerFactory("button", element -> Components.button(net.minecraft.network.chat.Component.empty(), (ButtonComponent button) -> {}));
+        registerFactory("button", element -> Components.button(new TextComponent(""), (ButtonComponent button) -> {}));
         registerFactory("textured-button", element->(ModComponent)TexturedButtonComponent.parse(element));
-        registerFactory("checkbox", element -> Components.checkbox(net.minecraft.network.chat.Component.empty()));
+        registerFactory("checkbox", element -> Components.checkbox(new TextComponent("")));
         registerFactory("text-box", element -> (ModComponent) Components.textBox(Sizing.content()));
         registerFactory("slider", element -> (ModComponent)Components.slider(Sizing.content()));
         registerFactory("discrete-slider", element ->(ModComponent)DiscreteSliderComponent.parse(element));

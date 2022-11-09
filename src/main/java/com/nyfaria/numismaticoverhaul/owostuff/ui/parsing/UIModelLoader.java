@@ -23,14 +23,14 @@ public class UIModelLoader implements ResourceManagerReloadListener {
     public void onResourceManagerReload(ResourceManager manager) {
         LOADED_MODELS.clear();
 
-        manager.listResources("owo_ui", identifier -> identifier.getPath().endsWith(".xml")).forEach((resourceId, resource) -> {
+        manager.listResources("owo_ui", identifier -> identifier.endsWith(".xml")).forEach((resourceId) -> {
             try {
                 var modelId = new ResourceLocation(
                         resourceId.getNamespace(),
                         resourceId.getPath().substring(7, resourceId.getPath().length() - 4)
                 );
 
-                LOADED_MODELS.put(modelId, UIModel.load(resource.open()));
+                LOADED_MODELS.put(modelId, UIModel.load(manager.getResource(resourceId).getInputStream()));
             } catch (ParserConfigurationException | IOException | SAXException e) {
                 //Owo.LOGGER.error("Could not parse UI model {}", resourceId, e);
             }

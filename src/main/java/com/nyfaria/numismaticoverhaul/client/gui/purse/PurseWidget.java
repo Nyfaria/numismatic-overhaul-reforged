@@ -18,6 +18,7 @@ import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import org.apache.commons.lang3.mutable.MutableInt;
 
@@ -78,9 +79,9 @@ public class PurseWidget extends GuiComponent implements Widget, GuiEventListene
             button.render(matrices, mouseX, mouseY, delta);
         }
 
-        client.font.draw(matrices, Component.literal("" + goldAmount), x + 5, y + 12, 16777215);
-        client.font.draw(matrices, Component.literal("" + silverAmount), x + 5, y + 24, 16777215);
-        client.font.draw(matrices, Component.literal("" + bronzeAmount), x + 5, y + 36, 16777215);
+        client.font.draw(matrices, new TranslatableComponent("" + goldAmount), x + 5, y + 12, 16777215);
+        client.font.draw(matrices, new TranslatableComponent("" + silverAmount), x + 5, y + 24, 16777215);
+        client.font.draw(matrices, new TranslatableComponent("" + bronzeAmount), x + 5, y + 36, 16777215);
     }
 
     @Override

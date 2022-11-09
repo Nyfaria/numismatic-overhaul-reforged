@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.nyfaria.numismaticoverhaul.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BundleItemMixin",
     "LivingEntityMixin",
@@ -12,7 +12,10 @@
     "TradeOfferListMixin",
     "TradeOfferMixin",
     "VillagerEntityMixin",
-    "owomixins.ScreenHandlerInvoker"
+    "owomixins.ScreenHandlerInvoker",
+    "owomixins.ui.BlockEntityAccessor",
+    "owomixins.ui.SlotAccessor",
+    "owomixins.ui.SlotMixin"
   ],
   "client": [
     "InventoryScreenMixin",
@@ -24,7 +27,10 @@
     "owomixins.ui.ClickableWidgetAccessor",
     "owomixins.ui.ClickableWidgetMixin",
     "owomixins.ui.DrawableHelperMixin",
-    "owomixins.ui.ScreenInvoker"
+    "owomixins.ui.RenderSystemMixin",
+    "owomixins.ui.ScreenInvoker",
+    "owomixins.ui.SliderWidgetMixin",
+    "owomixins.ui.TextFieldWidgetMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -17,7 +17,7 @@ import java.util.function.Supplier;
 
 public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, NumismaticOverhaul.MODID);
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES,NumismaticOverhaul. MODID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES,NumismaticOverhaul. MODID);
 
     public static final RegistryObject<Block> PIGGY_BANK = registerBlock("piggy_bank", PiggyBankBlock::new);
     // SHOP block

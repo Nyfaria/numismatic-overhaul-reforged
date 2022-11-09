@@ -1,13 +1,14 @@
 package com.nyfaria.numismaticoverhaul.villagers.data;
 
 import com.nyfaria.numismaticoverhaul.currency.CurrencyHelper;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
 
 public class RemappingTradeWrapper implements VillagerTrades.ItemListing {
 
@@ -23,7 +24,7 @@ public class RemappingTradeWrapper implements VillagerTrades.ItemListing {
 
     @Nullable
     @Override
-    public MerchantOffer getOffer(Entity entity, RandomSource random) {
+    public MerchantOffer getOffer(Entity entity, Random random) {
         final var tempOffer = delegate.getOffer(entity, random);
 
         if (tempOffer == null) return null;
