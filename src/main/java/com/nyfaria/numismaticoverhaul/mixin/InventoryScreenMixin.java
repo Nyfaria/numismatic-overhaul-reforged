@@ -51,7 +51,7 @@ public abstract class InventoryScreenMixin extends EffectRenderingInventoryScree
     }
 
     //Incredibly beautiful lambda mixin
-    @Inject(method = "lambda$init$0", at = @At("TAIL"))
+    @Inject(method = {"lambda$init$0", "m_98879_"}, at = @At("TAIL"))
     private void updateWidgetPosition(Button button, CallbackInfo ci) {
         this.numismatic$button.setPosition(this.leftPos + 158, this.topPos + 6);
         this.numismatic$purse = new PurseWidget(this.leftPos + 129, this.topPos + 20, minecraft, CurrencyHolderAttacher.getExampleHolderUnwrap(minecraft.player));

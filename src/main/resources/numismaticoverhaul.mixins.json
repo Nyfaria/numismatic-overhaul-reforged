@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "com.nyfaria.numismaticoverhaul.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "numismaticoverhaul.refmap.json",
   "mixins": [
     "BundleItemMixin",
     "LivingEntityMixin",
