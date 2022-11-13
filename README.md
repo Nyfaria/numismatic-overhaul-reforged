@@ -1,21 +1,7 @@
-# ForgeTemplate
+# Numismatic Overhaul: Reforged
 
-A simple template based off of the [MDK](https://github.com/MinecraftForge/MinecraftForge/tree/1.19.x/mdk) that I use to create new projects quicker by extracting all mod-related info to `gradle.properties`.
-**This does not do the work for you.** It only makes the initial Gradle setup easier and less tedious.
+This is a fork of the Fabric Mod [Numismatic Overhaul](https://www.curseforge.com/minecraft/mc-mods/numismatic-overhaul) 
 
-## Setting up
-* Open up `gradle.properties` and change all the necessary properties
-* Rename the main package to be the same as `mod_base_package` in the properties file, e.g. `me.sizableshrimp.numismaticoverhaul`
-
-### Using mixins?
-* Delete `build.gradle`
-* Rename `mixinbuild.gradle` to `build.gradle`
-* Rename `numismaticoverhaul.mixins.json` to start with your mod id
-* Add mixins under the `mixin` package inside your main package, e.g. `me.sizableshrimp.numismaticoverhaul.mixin`
-
-### Not using mixins?
-* Delete `mixinbuild.gradle`
-* Delete `src/main/resources/numismaticoverhaul.mixins.json`
-* Remove `mixin_version` from `gradle.properties`
-
-Finally, import into your IDE of choice.
+## Issues
+* If you have issues, please report them on my [Discord](https://discord.gg/WbNYM68Bkt)
+* DO NOT report to the Fabric Mods Github Issues.
