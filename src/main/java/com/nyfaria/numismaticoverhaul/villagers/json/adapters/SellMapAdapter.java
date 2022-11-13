@@ -42,7 +42,7 @@ public class SellMapAdapter extends TradeJsonAdapter {
         return new Factory(price, structure, max_uses, villager_experience, price_multiplier);
     }
 
-    private static class Factory implements VillagerTrades.ItemListing {
+    private static class Factory implements VillagerTrades.ItemListing, NumOTrade {
         private final int price;
         private final ResourceLocation structureId;
         private final int maxUses;

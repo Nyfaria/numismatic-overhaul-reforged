@@ -28,7 +28,7 @@ public class SellSingleEnchantmentAdapter extends TradeJsonAdapter {
         return new Factory(max_uses, villager_experience, price_multiplier);
     }
 
-    private static class Factory implements VillagerTrades.ItemListing {
+    private static class Factory implements VillagerTrades.ItemListing, NumOTrade {
         private final int experience;
         private final int maxUses;
         private final float multiplier;

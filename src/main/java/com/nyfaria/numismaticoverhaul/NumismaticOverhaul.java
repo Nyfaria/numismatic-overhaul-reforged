@@ -17,6 +17,7 @@ import com.nyfaria.numismaticoverhaul.init.ItemInit;
 import com.nyfaria.numismaticoverhaul.init.MenuInit;
 import com.nyfaria.numismaticoverhaul.item.MoneyBagItem;
 import com.nyfaria.numismaticoverhaul.network.NetworkHandler;
+import com.nyfaria.numismaticoverhaul.villagers.json.VillagerTradesHandler;
 import net.minecraft.ChatFormatting;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.network.chat.Component;
@@ -64,7 +65,7 @@ public class NumismaticOverhaul {
         BlockInit.BLOCK_ENTITIES.register(bus);
         CurrencyHolderAttacher.register();
         MenuInit.MENU_TYPES.register(bus);
-
+        VillagerTradesHandler.registerDefaultAdapters();
     }
 
     @SubscribeEvent

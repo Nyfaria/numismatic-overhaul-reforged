@@ -44,4 +44,8 @@ public class SlotMixin implements OwoSlotExtension {
         if (!this.owo$disabledOverride) return;
         cir.setReturnValue(false);
     }
+    @Inject(method = "getMaxStackSize()I", at = @At("HEAD"), cancellable = true)
+    private void injectOverride2(CallbackInfoReturnable<Integer> cir) {
+        cir.setReturnValue(99);
+    }
 }

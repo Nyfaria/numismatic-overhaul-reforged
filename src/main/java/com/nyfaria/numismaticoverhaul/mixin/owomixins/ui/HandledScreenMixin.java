@@ -1,6 +1,7 @@
 package com.nyfaria.numismaticoverhaul.mixin.owomixins.ui;
 
 import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.nyfaria.numismaticoverhaul.owostuff.ui.base.BaseOwoHandledScreen;
@@ -72,7 +73,7 @@ public class HandledScreenMixin {
 
     @SuppressWarnings("InvalidInjectorMethodSignature")
     @Inject(method = "mouseClicked", at = @At(value = "INVOKE", target = "Lnet/minecraft/Util;getMillis()J"), locals = LocalCapture.CAPTURE_FAILHARD)
-    private void captureClickedSlot(double mouseX, double mouseY, int button, CallbackInfoReturnable<Boolean> cir, boolean bl, Slot slot) {
+    private void captureClickedSlot(double mouseX, double mouseY, int button, CallbackInfoReturnable<Boolean> cir, InputConstants.Key mouseKey, boolean bl, Slot slot) {
         this.owo$lastClickedSlot = slot;
     }
 

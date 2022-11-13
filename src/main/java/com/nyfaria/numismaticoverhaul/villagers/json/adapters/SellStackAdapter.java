@@ -27,7 +27,7 @@ public class SellStackAdapter extends TradeJsonAdapter {
         return new Factory(sell, price, max_uses, villager_experience, price_multiplier);
     }
 
-    private static class Factory implements VillagerTrades.ItemListing {
+    private static class Factory implements VillagerTrades.ItemListing, NumOTrade {
         private final ItemStack sell;
         private final int maxUses;
         private final int experience;

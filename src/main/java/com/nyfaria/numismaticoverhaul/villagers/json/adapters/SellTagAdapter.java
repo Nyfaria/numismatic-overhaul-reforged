@@ -36,7 +36,7 @@ public class SellTagAdapter extends TradeJsonAdapter {
         return new Factory(tag, count, price, max_uses, villager_experience, price_multiplier);
     }
 
-    private static class Factory implements VillagerTrades.ItemListing {
+    private static class Factory implements VillagerTrades.ItemListing, NumOTrade {
         private final ResourceLocation sellTag;
         private final int count;
         private final int maxUses;

@@ -33,7 +33,7 @@ public class SellDyedArmorAdapter extends TradeJsonAdapter {
         return new Factory(item, price, max_uses, villager_experience, price_multiplier);
     }
 
-    private static class Factory implements VillagerTrades.ItemListing {
+    private static class Factory implements VillagerTrades.ItemListing, NumOTrade {
         private final Item sell;
         private final int price;
         private final int maxUses;

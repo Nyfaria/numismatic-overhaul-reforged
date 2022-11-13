@@ -31,7 +31,7 @@ public class ProcessItemAdapter extends TradeJsonAdapter {
         return new Factory(buy, sell, price, max_uses, villager_experience, price_multiplier);
     }
 
-    private static class Factory implements VillagerTrades.ItemListing {
+    private static class Factory implements VillagerTrades.ItemListing, NumOTrade {
         private final ItemStack buy;
         private final int price;
         private final ItemStack sell;

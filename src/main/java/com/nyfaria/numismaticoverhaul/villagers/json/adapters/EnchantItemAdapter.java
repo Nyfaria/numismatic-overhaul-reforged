@@ -36,7 +36,7 @@ public class EnchantItemAdapter extends TradeJsonAdapter {
         return new Factory(item, max_uses, villager_experience, level, allow_treasure, price_multiplier, base_price);
     }
 
-    private static class Factory implements VillagerTrades.ItemListing {
+    private static class Factory implements VillagerTrades.ItemListing, NumOTrade {
         private final int experience;
         private final int maxUses;
         private final int level;

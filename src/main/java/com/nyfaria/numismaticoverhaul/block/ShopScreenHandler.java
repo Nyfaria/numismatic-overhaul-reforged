@@ -49,10 +49,10 @@ public class ShopScreenHandler extends AbstractContainerMenu {
         if (!this.owner.level.isClientSide) {
             this.shop = (ShopBlockEntity) shopInventory;
             this.offers = shop.getOffers();
+            updateClient();
         } else {
             this.offers = new ArrayList<>();
         }
-
         SlotGenerator.begin(this::addSlot, 8, 17)
                 .slotFactory((inv, index, x, y) -> new AutoHidingSlot(inv, index, x, y, 0, false))
                 .grid(this.shopInventory, 0, 9, 3)

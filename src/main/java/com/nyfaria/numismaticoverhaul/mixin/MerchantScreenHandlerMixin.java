@@ -17,6 +17,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(MerchantMenu.class)
@@ -25,6 +26,14 @@ public class MerchantScreenHandlerMixin {
     @Shadow
     @Final
     private Merchant trader;
+
+    @Redirect(method = "moveFromInventoryToPaymentSlot", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isSameItemSameTags(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Z"))
+    public boolean isSameItemSameTags(ItemStack stack1, ItemStack stack2) {
+        if (stack1.getItem() instanceof CoinItem) {
+            return stack1.getItem() == stack2.getItem();
+        }
+        return ItemStack.isSameItemSameTags(stack1, stack2);
+    }
 
     //Autofill with coins from the player's purse if the trade requires it
     //Injected at TAIL to let normal autofill run and fill up if anything is missing
@@ -65,7 +74,7 @@ public class MerchantScreenHandlerMixin {
         Player player = ((Inventory) handler.getSlot(3).container).player;
 
         //See how much is required and how much in present in the player's inventory
-        long requiredCurrency = ((MoneyBagItem)ItemInit.MONEY_BAG.get()).getValue(stack);
+        long requiredCurrency = ((MoneyBagItem) ItemInit.MONEY_BAG.get()).getValue(stack);
         long availableCurrencyInPlayerInventory = CurrencyHelper.getMoneyInInventory(player, false);
 
         //Find out how much we still need to fill

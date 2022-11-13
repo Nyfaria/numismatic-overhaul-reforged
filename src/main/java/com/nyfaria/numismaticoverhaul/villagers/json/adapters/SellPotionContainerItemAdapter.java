@@ -35,7 +35,7 @@ public class SellPotionContainerItemAdapter extends TradeJsonAdapter {
         return new Factory(container_item, buy_item, price, max_uses, villager_experience, price_multiplier);
     }
 
-    private static class Factory implements VillagerTrades.ItemListing {
+    private static class Factory implements VillagerTrades.ItemListing, NumOTrade {
         private final ItemStack containerItem;
         private final ItemStack buyItem;
 

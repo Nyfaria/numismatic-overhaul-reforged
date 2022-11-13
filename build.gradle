@@ -107,13 +107,23 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven hundredMedia.get100MediaMaven()
-
+    mavenLocal()
     maven {
         name = 'Cursemaven'
         url = 'https://cursemaven.com'
         content {
             includeGroup 'curse.maven'
         }
+    }
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.dev"
     }
 }
 
@@ -136,6 +146,13 @@ dependencies {
 
     // Suggestion Provider Fix
     runtimeOnly fg.deobf("curse.maven:suggestion-provider-fix-469647:${suggestion_provider_fix_file_id}")
+    runtimeOnly fg.deobf("curse.maven:beautify-decorate-633252:4036351")
+    // compile against the JEI API but do not include it at runtime
+    compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
+    compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
+    // at runtime, use the full JEI jar for Forge
+    implementation(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
+    implementation(fg.deobf("com.github.Pandarix.beautify:Beautify:1.4.4-SNAPSHOT"))
 }
 
 def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta', "${mod_id}.mixins.json".toString()]

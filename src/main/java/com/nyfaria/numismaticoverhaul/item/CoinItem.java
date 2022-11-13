@@ -31,6 +31,7 @@ public class CoinItem extends Item implements CurrencyItem {
         this.NAME_STYLE = Style.EMPTY.withColor(TextColor.fromRgb(currency.getNameColor()));
     }
 
+
     @Override
     public boolean overrideOtherStackedOnMe(ItemStack clickedStack, ItemStack otherStack, Slot slot, ClickAction clickType, Player player, SlotAccess cursorStackReference) {
         if (slot instanceof MerchantResultSlot) return false;

@@ -35,7 +35,7 @@ public class SellSusStewAdapter extends TradeJsonAdapter {
         return new Factory(effect, price, duration, villager_experience, price_multiplier, max_uses);
     }
 
-    static class Factory implements VillagerTrades.ItemListing {
+    static class Factory implements VillagerTrades.ItemListing, NumOTrade {
         private final MobEffect effect;
         private final int price;
         private final int duration;
