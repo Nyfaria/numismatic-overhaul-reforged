@@ -20,6 +20,7 @@ import com.nyfaria.numismaticoverhaul.villagers.json.adapters.SellSingleEnchantm
 import com.nyfaria.numismaticoverhaul.villagers.json.adapters.SellStackAdapter;
 import com.nyfaria.numismaticoverhaul.villagers.json.adapters.SellSusStewAdapter;
 import com.nyfaria.numismaticoverhaul.villagers.json.adapters.SellTagAdapter;
+import com.nyfaria.numismaticoverhaul.villagers.json.adapters.StackTradeAdapter;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
@@ -69,6 +70,7 @@ public class VillagerTradesHandler {
         tradeTypesRegistry.put(NumismaticOverhaul.id("sell_potion_container"), new SellPotionContainerItemAdapter());
         tradeTypesRegistry.put(NumismaticOverhaul.id("buy_item"), new BuyStackAdapter());
         tradeTypesRegistry.put(NumismaticOverhaul.id("buy_stack"), new BuyStackAdapter());
+        tradeTypesRegistry.put(NumismaticOverhaul.id("stack_for_stack"), new StackTradeAdapter());
     }
 
     public static void loadProfession(ResourceLocation fileId, JsonObject jsonRoot) {

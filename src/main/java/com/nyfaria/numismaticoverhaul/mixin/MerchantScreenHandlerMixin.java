@@ -17,6 +17,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(MerchantMenu.class)
@@ -41,7 +42,13 @@ public class MerchantScreenHandlerMixin {
 
         if (slot == 1) playerBalance.commitTransactions();
     }
-
+    @Redirect(method = "moveFromInventoryToPaymentSlot", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isSameItemSameTags(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Z"))
+    public boolean isSameItemSameTags(ItemStack stack1, ItemStack stack2) {
+        if (stack1.getItem() instanceof CoinItem) {
+            return stack1.getItem() == stack2.getItem();
+        }
+        return ItemStack.isSameItemSameTags(stack1, stack2);
+    }
     private static void numismatic$autofillWithCoins(int slot, ItemStack stack, MerchantMenu handler, CurrencyHolder playerBalance) {
         //See how much is required and how much was already autofilled
         long requiredCurrency = ((CoinItem) stack.getItem()).currency.getRawValue(stack.getCount());

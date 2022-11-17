@@ -6,7 +6,11 @@
   "refmap": "numismaticoverhaul.refmap.json",
   "mixins": [
     "BundleItemMixin",
+    "FriendlyByteBufMixin",
+    "InvWrapperMixin",
     "LivingEntityMixin",
+    "MerchantContainerMixin",
+    "MerchantOfferMixin",
     "MerchantScreenHandlerMixin",
     "ServerPlayerEntityMixin",
     "ServerWorldMixin",
