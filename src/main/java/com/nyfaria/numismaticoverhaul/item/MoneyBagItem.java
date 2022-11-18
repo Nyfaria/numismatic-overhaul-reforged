@@ -48,7 +48,7 @@ public class MoneyBagItem extends Item implements CurrencyItem {
     }
 
     public long getValue(ItemStack stack) {
-        if (stack.is(ItemInit.MONEY_BAG.get())) return 0;
+        if (!stack.is(ItemInit.MONEY_BAG.get())) return 0;
 
         if (!stack.getOrCreateTag().contains("Combined")) {
             return stack.getTag().getLong("value");
