@@ -5,11 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "numismaticoverhaul.refmap.json",
   "mixins": [
-    "BundleItemMixin",
-    "FriendlyByteBufMixin",
-    "InvWrapperMixin",
     "LivingEntityMixin",
-    "MerchantContainerMixin",
     "MerchantOfferMixin",
     "MerchantScreenHandlerMixin",
     "ServerPlayerEntityMixin",
