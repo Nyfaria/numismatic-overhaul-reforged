@@ -1,4 +1,4 @@
-package com.nyfaria.numismaticoverhaul.mixin;
+package com.nyfaria.numismaticoverhaul.mixin.ninetynine;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.network.FriendlyByteBuf;
@@ -15,9 +15,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(FriendlyByteBuf.class)
 public class FriendlyByteBufMixin
 {
-    /**
-     * This writes the item count as an int instead of a byte.
-     */
+
     @Redirect(method = "writeItemStack",
               at = @At(value = "INVOKE",
                        target = "Lnet/minecraft/network/FriendlyByteBuf;writeByte(I)Lio/netty/buffer/ByteBuf;"))
@@ -26,34 +24,18 @@ public class FriendlyByteBufMixin
         return instance.writeInt(count);
     }
 
-    /**
-     * We can't change the return type of the method, so instead we return a dummy value and modify the variable later.
-     * This is essentially what this mixin and {@link #readStackItemCount} does: <br>
-     * <pre>
-     * {@code
-     * //original code, reads item count as a byte
-     * int count = buffer.readByte();
-     * //the result of doNothing
-     * int count = 0;
-     * //the result of readStackItemCount, which reads the item count as an int instead of a byte
-     * int count = readStackItemCount(0); //0 is unused
-     * }
-     * </pre>
-     */
+
     @Redirect(method = "readItem",
               at = @At(value = "INVOKE", target = "Lnet/minecraft/network/FriendlyByteBuf;readByte()B"))
     private byte doNothing(FriendlyByteBuf instance)
     {
-        return 0; // do nothing, because we cannot change the return type of this method
+        return 0;
     }
 
-    /**
-     * See {@link #doNothing(FriendlyByteBuf)}
-     */
+
     @ModifyVariable(method = "readItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;<init>(Lnet/minecraft/world/level/ItemLike;I)V"), ordinal = 0)
     private int readStackItemCount(int value)
     {
-        //actually read the item count here
         return ((FriendlyByteBuf) (Object) this).readInt();
     }
 }
