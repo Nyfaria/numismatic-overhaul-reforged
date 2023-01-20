@@ -33,9 +33,11 @@ public class FriendlyByteBufMixin
     }
 
 
-    @ModifyVariable(method = "readItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;<init>(Lnet/minecraft/world/level/ItemLike;I)V"), ordinal = 0)
+    @ModifyVariable(method = "readItem", at = @At("STORE"), ordinal = 0)
     private int readStackItemCount(int value)
     {
+        //actually read the item count here
         return ((FriendlyByteBuf) (Object) this).readInt();
     }
+
 }
