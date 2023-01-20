@@ -1,4 +1,4 @@
-package com.nyfaria.numismaticoverhaul.mixin;
+package com.nyfaria.numismaticoverhaul.mixin.ninetynine;
 
 import com.nyfaria.numismaticoverhaul.item.CoinItem;
 import net.minecraft.world.entity.SlotAccess;
