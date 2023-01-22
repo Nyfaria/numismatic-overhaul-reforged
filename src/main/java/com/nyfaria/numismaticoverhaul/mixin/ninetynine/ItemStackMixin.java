@@ -15,12 +15,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ItemStackMixin {
 
 
-
-    @Inject(method = "getMaxStackSize", at = @At("RETURN"), cancellable = true)
-    private void increaseStackLimit(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(99);
-    }
-
     @Redirect(method = "save",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/nbt/CompoundTag;putByte(Ljava/lang/String;B)V"))
     private void saveBigStack(CompoundTag tag, String key, byte p_128346_) {
