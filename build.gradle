@@ -147,6 +147,7 @@ dependencies {
     // Suggestion Provider Fix
     runtimeOnly fg.deobf("curse.maven:suggestion-provider-fix-469647:${suggestion_provider_fix_file_id}")
     runtimeOnly fg.deobf("curse.maven:beautify-decorate-633252:4036351")
+    runtimeOnly fg.deobf("curse.maven:immersive-engineering-231951:4193176")
     // compile against the JEI API but do not include it at runtime
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))

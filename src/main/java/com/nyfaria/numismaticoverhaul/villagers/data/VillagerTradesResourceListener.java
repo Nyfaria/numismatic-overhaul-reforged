@@ -12,6 +12,8 @@ import net.minecraft.util.Tuple;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,10 +38,10 @@ public class VillagerTradesResourceListener extends SimpleJsonResourceReloadList
             VillagerTradesHandler.loadProfession(identifier, root);
         });
 
-        NumismaticVillagerTradesRegistry.wrapModVillagers();
 
         final Tuple<HashMap<VillagerProfession, Int2ObjectOpenHashMap<VillagerTrades.ItemListing[]>>, Int2ObjectOpenHashMap<VillagerTrades.ItemListing[]>> registry = NumismaticVillagerTradesRegistry.getRegistryForLoading();
         VillagerTrades.TRADES.putAll(registry.getA());
+        NumismaticVillagerTradesRegistry.wrapModVillagers();
 
         if (!registry.getB().isEmpty()) {
             VillagerTrades.WANDERING_TRADER_TRADES.clear();

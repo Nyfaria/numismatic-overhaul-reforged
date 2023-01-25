@@ -48,7 +48,7 @@ public class NumismaticVillagerTradesRegistry {
     // -- Helper Methods --
 
     public static void wrapModVillagers() {
-        if (MOD_VILLAGERS_WRAPPED.get()) return;
+//        if (MOD_VILLAGERS_WRAPPED.get()) return;
 
         VillagerTrades.TRADES.forEach((profession, int2TradesMap) -> {
             if (TRADES_REGISTRY.containsKey(profession)) return;

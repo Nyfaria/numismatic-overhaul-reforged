@@ -17,6 +17,7 @@
     "TradeOfferListMixin",
     "TradeOfferMixin",
     "VillagerEntityMixin",
+    "VillagerTradingManagerMixin",
     "ninetynine.BundleItemMixin",
     "ninetynine.ContainersMixin",
     "ninetynine.FriendlyByteBufMixin",
