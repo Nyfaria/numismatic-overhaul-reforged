@@ -96,4 +96,5 @@ public class CoinItem extends Item implements CurrencyItem {
         values[this.currency.ordinal()] = stack.getCount();
         return values;
     }
+
 }

@@ -143,9 +143,12 @@ dependencies {
 
     // Capability Syncer
     hundredMedia.addJarJarDep('dev._100media.capabilitysyncer:capabilitysyncer', capabilitysyncer_version, capabilitysyncer_version_range, null, '1.18.2')
+    hundredMedia.addJarJarDep('curse.maven:bigger-stacks-564896','4498838','[4498838]')
 
     // Suggestion Provider Fix
     runtimeOnly fg.deobf("curse.maven:suggestion-provider-fix-469647:${suggestion_provider_fix_file_id}")
+//    implementation(fg.deobf("curse.maven:sophisticated-backpacks-422301:4499802"))
+    implementation(fg.deobf("curse.maven:sophisticated-core-618298:4503932"))
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"))
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
     // at runtime, use the full JEI jar for Forge

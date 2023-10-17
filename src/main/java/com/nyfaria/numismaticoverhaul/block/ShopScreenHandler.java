@@ -16,6 +16,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -36,6 +37,7 @@ public class ShopScreenHandler extends AbstractContainerMenu {
 
 
     private ShopBlockEntity shop = null;
+    private boolean clicked = false;
 
     public ShopScreenHandler(int syncId, Inventory playerInventory) {
         this(syncId, playerInventory, new SimpleContainer(27));
@@ -65,17 +67,30 @@ public class ShopScreenHandler extends AbstractContainerMenu {
         this.addSlot(new AutoHidingSlot(bufferInventory, 0, 186, 14, 0, true) {
             @Override
             public boolean mayPlace(ItemStack stack) {
-                ItemStack shadow = stack.copy();
-                this.set(shadow);
+                if (clicked) {
+                    ItemStack shadow = stack.copy();
+                    this.set(shadow);
+                    clicked = false;
+                }
                 return false;
             }
 
             @Override
             public boolean mayPickup(Player playerEntity) {
-                this.set(ItemStack.EMPTY);
+                if (clicked) {
+                    this.set(ItemStack.EMPTY);
+                    clicked = false;
+                }
                 return false;
             }
         });
+    }
+
+    @Override
+    public void clicked(int pSlotId, int pButton, ClickType pClickType, Player pPlayer) {
+        clicked = true;
+        super.clicked(pSlotId, pButton, pClickType, pPlayer);
+
     }
 
     private void onBufferChanged(Container inventory) {
@@ -143,7 +158,7 @@ public class ShopScreenHandler extends AbstractContainerMenu {
     }
 
     private void updateClient() {
-        NetworkHandler.INSTANCE.send(PacketDistributor.PLAYER.with(()->(ServerPlayer)owner),new UpdateShopScreenS2CPacket(shop));
+        NetworkHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) owner), new UpdateShopScreenS2CPacket(shop));
     }
 
     public ItemStack getBufferStack() {
